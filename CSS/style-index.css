@@ -28,9 +28,9 @@ body{
 /****************************************************************/
 
 .container{
-    display: flex;
-
-    width: 50%;
+    display: flex;    
+    width: 70%;    
+    min-width: 350px;
     height: 80vh;
     background-color: #fff;
     border-radius: 10px;
@@ -134,14 +134,18 @@ body{
     font-size: 20px;
     box-sizing: border-box;
     margin-bottom: 20px;
+    transition: .3s ease-in-out;
 }
 
 .container-left form .form-comtainer .login-btn:hover{
+    padding: 10px 10px;
     color: aqua;
     letter-spacing: 5px;
     font-size: 25px;
     transition: .3s ease-in-out;
 }
+
+
 
 .container-left a{
     font-size: 20px;
@@ -180,31 +184,55 @@ body{
 
 
 /*********************************************************************/
+/************************** responsive styling **********************/
+/*******************************************************************/
 
+@media only screen and (max-width: 700px) {
+    .container {        
+        height: 90vh;
+        width: 80%;
+        min-width: 350px;
+        margin: 20px auto;
+        display: flex;        
+        
+    }
+    .container-right{
+        visibility: hidden;
+        display: none;
+    }
+    .container-middle{
+        visibility: hidden;
+    }
+    .container-left {
+        width: 100%;
+        height: auto;
+        border-radius: 10px 10px 0 0;
+    }
 
-input[type=submit]{
-    width: 50%;
-    background-color: #222;
-    color: #fff;    
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
+    .container-left .logo{
+        height: 100px;
+    }
+
+    .container-left h1{
+        font-size: 35px;
+    }
+
+    .container-left label{
+        font-size: 15px;
+    }
+    .container-left .logo img{
+        height: 100px;
+    }
+
+    .container-left .hr1{
+        margin-top: 10px;
+    }
     
 }
 
-input[type=submit]:hover{
-    width: 50%;
-    background-color: #d34f02;
-    color: #222;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    
-}
+
+
+
+
+
 
