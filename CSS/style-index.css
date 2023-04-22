@@ -30,7 +30,8 @@ body{
 .container{
     display: flex;    
     width: 70%;    
-    min-width: 350px;
+    min-width: 700px;
+    max-width: 900px;
     height: 80vh;
     background-color: #fff;
     border-radius: 10px;

@@ -34,7 +34,9 @@ section{
 nav {
     background-color: rgb(25, 86, 86); 
     width: 15%;
-    position: relative;    
+    position: relative; 
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1), 0 15px 12px rgba(0,0,0,0.1);
+   
 }
 
 nav .logo{
@@ -69,7 +71,7 @@ button{
 
 nav .links ul li a{
     display: flex;
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Kanit', sans-serif;
     color: aliceblue;
     text-decoration: none;      
@@ -95,12 +97,16 @@ nav .alert-logout{
 }
 
 nav .alert-logout i{
-    color: antiquewhite;
-    font-size: 35px;
+    color: aliceblue;
+    font-size: 27px;
 }
 
-nav .alert-logout #alert-1{
+.visible{
+    visibility: visible;
+}
 
+.hidden{
+    visibility: hidden;
 }
 
 nav .alert-logout #alert-2{
@@ -127,7 +133,7 @@ nav .alert-logout #alert-2{
     }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1100px) {
     *{
         margin: 0;
         padding: 0;
@@ -190,3 +196,6 @@ nav .alert-logout #alert-2{
     }
      
 }
+
+
+
