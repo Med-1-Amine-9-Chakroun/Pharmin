@@ -1,0 +1,192 @@
+/****************************************************/
+/*********************** FONTS *********************/
+/**************************************************/
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+
+
+/**********************************************************************/
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/*************************************/
+/*******        Section       *******/
+/***********************************/
+
+section{
+    display: flex;
+    height: 100vh;
+}
+
+
+
+/*************************************/
+/*******        Nav Bar       *******/
+/***********************************/
+
+/*******************/
+/****   LOGO   ****/
+/*****************/
+
+nav {
+    background-color: rgb(25, 86, 86); 
+    width: 15%;
+    position: relative;    
+}
+
+nav .logo{
+    display: flex;
+    justify-content: center;
+    height: 120px;
+    margin: 25px 0;
+    
+    
+}
+nav .logo img{
+    height: 100%;
+}
+
+/*******************/
+/****   LINKS  ****/
+/*****************/
+
+nav .links-icons{
+    display: none;
+}
+
+nav .links ul{
+    margin: 100px 20px 0 20px;
+    list-style-type: none;      
+}
+
+button{
+    background-color: transparent;
+    border: none;
+}
+
+nav .links ul li a{
+    display: flex;
+    font-size: 25px;
+    font-family: 'Kanit', sans-serif;
+    color: aliceblue;
+    text-decoration: none;      
+    border-bottom: 1px solid whitesmoke;
+    margin-bottom: 35px;
+}
+
+/*******************/
+/***LOGOUT ALERT***/
+/*****************/
+
+nav .alert-logout{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    box-sizing: border-box;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    background-color: #222222;
+    width: 100%;
+}
+
+nav .alert-logout i{
+    color: antiquewhite;
+    font-size: 35px;
+}
+
+nav .alert-logout #alert-1{
+
+}
+
+nav .alert-logout #alert-2{
+    color: rgb(170, 33, 33);
+    visibility: hidden;
+}
+
+
+/*********************************************************************/
+/************************** responsive styling **********************/
+/*******************************************************************/
+@media only screen and (max-width: 1400px) {
+    nav {
+        width: 18%;   
+    }
+    nav .links ul li a{
+        font-size: 20px;
+    }
+    nav .alert-logout i{
+        font-size: 25px;
+    }
+    nav .alert-logout{
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    section {
+        flex-direction: column;
+        position: relative;
+        
+      }
+    article{
+        position: absolute;
+        top: 0;
+    }
+    nav{
+        position: absolute;
+        justify-content: space-between;
+        bottom: 0;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        height: 70px;
+    }
+    nav .logo{
+        padding: 10px 0 10px 30px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    nav .logo img{
+        height: 80%;
+    }
+    nav .links {
+        display: none;
+        
+    }
+    nav .links-icons{
+        display: flex;
+        color: antiquewhite;
+        font-size: 30px;
+        width: 60%;
+    }
+    nav .links-icons ul {
+        list-style-type: none;
+        text-decoration: none;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        
+    }
+    nav .links-icons ul li i{
+        color: #e0d0d0;
+        margin-left: 20%;
+        padding: 0 20px;
+    }
+   
+    nav .alert-logout{
+        width: auto;
+        position: relative;
+        
+    }
+     
+}
