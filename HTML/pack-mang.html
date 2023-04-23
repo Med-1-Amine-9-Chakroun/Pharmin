@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="../CSS/style-nav-bar.css">
+        <link rel="stylesheet" href="../CSS/pack-mang-style.css">
+
         <link rel="icon" href="../images/pills.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     </head>
@@ -47,11 +49,60 @@
                 </div>
             </nav>
             <article>
-               
-                <div class="article-right"></div>
+                <div class="article-left">
+                    <div class="article-left-head">
+                        <h1>Add A Packaging Material</h1>
+                    </div>    
+                    <form action="" method="post">
+                        <label for="name">Name :</label>
+                        <input type="text" id="name" class="" placeholder="Enter Name" required>
+                        <label for="desc">Description :</label>
+                        <input type="text" id="desc" class="" placeholder="Enter Description" required>
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" id="quantity" class="" placeholder="Enter Quantity" required>
+                        <p class="error-msg"  id="error-msg"></p>
+                        <button type="submit" class="add-btn">ADD</button>                        
+                    </form>                
+                </div>
+                <div class="article-right">
+                    <div class="article-right-head">
+                        <h1>List Of Medications</h1>
+                    </div>
+                    <div class="article-right-search">
+                        <p class="error-msg-search"></p>
+                        <form action="" method="post">
+                            <label for="felt-opt">Filtering :</label>
+                            <input type="text" placeholder="Type something">
+                            <button type="submit" id="search-btn" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>                            
+                        </form>
+                    </div>
+                    <div class="article-right-table">
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Quantity</th>
+                                <th>Sell</th>
+                            </tr> 
+                            <tr>
+                                <td>
+                                    <p>gtgtgtgtg</p>
+                                </td>
+                                <td>
+                                    <p>gtgtgtgtg</p>
+                                </td>
+                                <td>
+                                    <p>gtgtgtgtg</p>
+                                </td>
+                                <td>
+                                    <p>gtgtgtgtg</p>
+                                </td>                             
+                            </tr>
+                        </table>
+                    </div>                
+                </div>
             </article>
-        </section>
-        
+        </section>        
         <footer></footer>
     </body>
 </html>

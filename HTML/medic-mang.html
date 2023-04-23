@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Medication</title>
         <link rel="stylesheet" href="../CSS/medic-mang-style.css">
         <link rel="stylesheet" href="../CSS/style-nav-bar.css">
         <link rel="icon" href="../images/pills.png">
@@ -53,21 +53,28 @@
                         <h1>Add Medication</h1>
                     </div>                    
                     <form action="" method="post">
-                        <label for="medicName">Medication Name :</label>
-                        <input type="text" placeholder="Enter Medication Name" name="" id="medicName" required>
-                        <label for="medicCode">Medication Code :</label>
-                        <input type="text" placeholder="Enter Medication Code" name="" id="medicCode" required> 
-                        <label for="type">Medicine Type :</label>
-                        <select name="" id="type" required>
-                            <option value="">---</option>
-                            <option value="">Capsules</option>
-                            <option value="">Liquids</option>
-                            <option value="">Powders</option>
-                            <option value="">Topical gels and creams</option>
-                            <option value="">Suppositories</option>
-                            <option value="">Inhalers</option>
-                            <option value="">Injectables</option>
-                        </select>  
+                        <div class="div-1">
+                            <label for="medicName">Medication Name :</label>
+                            <input type="text" placeholder="Enter Medication Name" name="" id="medicName" required>
+                            <label for="medicCode">Medication Code :</label>
+                            <input type="text" placeholder="Enter Medication Code" name="" id="medicCode" required>                             
+                        </div>
+                        <div class="div-2">
+                            <label for="type">Medicine Type :</label>
+                            <select name="" id="type" required>
+                                <option value="">---</option>
+                                <option value="">Capsules</option>
+                                <option value="">Liquids</option>
+                                <option value="">Powders</option>
+                                <option value="">Topical gels and creams</option>
+                                <option value="">Suppositories</option>
+                                <option value="">Inhalers</option>
+                                <option value="">Injectables</option>
+                            </select>  
+                            <label for="date">Expiration date :</label>    
+                            <input type="date" id="date" required> 
+                        </div>
+                        
                         <div class="article-left-quantity">
                             <div class="article-left-quantity-units">
                                 <label for="units">Units :</label>
@@ -83,10 +90,11 @@
                                 <input type="text" placeholder="Enter Quantity" name="" id="quantity" required>                                                         
                             </div>
                         </div>      
-                        <label for="date">Expiration date :</label>    
-                        <input type="date" id="date" required>              
-                        <p class="error-msg"  id="error-msg"></p>
-                        <input type="submit" class="add-btn" value="ADD">
+                        <div class="div-3">                            
+                            <input type="submit" class="add-btn" value="ADD">
+                            <p class="error-msg"  id="error-msg"></p>
+                        </div>
+
                     </form>
                 </div>
                 <div class="article-right">
