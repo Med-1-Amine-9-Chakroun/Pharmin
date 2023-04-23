@@ -94,11 +94,13 @@ nav .alert-logout{
     height: 70px;
     background-color: #222222;
     width: 100%;
+    cursor: pointer;
 }
 
 nav .alert-logout i{
     color: aliceblue;
     font-size: 27px;
+    cursor: pointer;
 }
 
 .visible{
