@@ -1,0 +1,53 @@
+
+/************************/
+/***article-right-form***/
+/**********************/
+article .article-right form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px 10px 30px;
+    
+}
+
+article .article-right form label{
+    font-size: 22px;    
+    color: #2e2e2e;
+}
+
+article .article-right form input{
+    
+    padding: 10px 15px 10px 10px;
+    margin: 0.5rem 0;
+    display: block;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+}
+
+article .article-right form input::placeholder{
+    font-size: 1.1rem;
+    
+}
+
+article .article-right form .add-btn{   
+    background-color: #222222;
+    color: #fff;    
+    padding: 10px 50px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .3s ease-in-out;
+}
+article .article-right form>*{
+    margin-bottom: 7px;
+}
+
+article .article-right form p{
+    color: #c93333;
+    text-align: center;
+    font-size: 25px;
+    height: 40px;
+}

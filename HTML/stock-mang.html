@@ -7,6 +7,8 @@
         <title>Document</title>
         <link rel="stylesheet" href="../CSS/style-nav-bar.css">
         <link rel="stylesheet" href="../CSS/alert-mang-style.css">
+        <link rel="stylesheet" href="../CSS/stock-mang-style.css">
+
         <link rel="icon" href="../images/pills.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     </head>
@@ -86,6 +88,22 @@
                     <div class="article-right-head">
                         <h1>Creating An Invoice</h1>
                     </div>
+                    <form action="" method="post">
+                        <label for="name">Medication Name :</label>
+                        <input type="text" id="name" class="" placeholder="Enter Name" required>
+                        <label for="desc">Medication Code :</label>
+                        <input type="text" id="desc" class="" placeholder="Enter Description" required>
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" id="quantity" class="" placeholder="Enter Quantity" required>
+                        <label for="name">Package Name :</label>
+                        <input type="text" id="name" class="" placeholder="Enter Name" required>
+                        <label for="desc">Packege Code :</label>
+                        <input type="text" id="desc" class="" placeholder="Enter Description" required>
+                        <label for="quantity">Quantity :</label>
+                        <input type="text" id="quantity" class="" placeholder="Enter Quantity" required>
+                        <p class="error-msg"  id="error-msg"></p>
+                        <button type="submit" class="add-btn">ADD</button>                        
+                    </form> 
                 </div>
             </article>
         </section>
