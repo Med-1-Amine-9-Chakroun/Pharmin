@@ -1,3 +1,11 @@
+<?php  
+include('../PHP/package-method.php');
+include('../PHP/DbConnexion.php');
+$bdd = maConnexion();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,13 +28,13 @@
                 <div class="links">
                     <ul>
                         <li>
-                            <a href="medic-mang.html">Medication</a>
+                            <a href="medic-mang.php">Medication</a>
                         </li>
                         <li>
-                            <a href="pack-mang.html">Packaging Material</a>
+                            <a href="pack-mang.php">Packaging Material</a>
                         </li>
                         <li>
-                            <a href="stock-mang.html">Invoice</a>
+                            <a href="stock-mang.php">Invoice</a>
                         </li>                                    
                     </ul>
                 </div>
@@ -39,12 +47,12 @@
                 </div>
                 <div class="alert-logout">
                     <div class="alert">
-                        <a href="alert-interface.html">
+                        <a href="alert-interface.php">
                             <i id="alert-1" class="fa-solid fa-bell"></i>
                             <i id="alert-2" class="fa-solid fa-bell fa-shake"></i>
                         </a>
                     </div>
-                    <a href="../index.html"><button type="button" name="logout"><i class="fa-solid fa-right-from-bracket"></i></button>                                          </a>
+                    <a href="../index.php"><button type="button" name="logout"><i class="fa-solid fa-right-from-bracket"></i></button>                                          </a>
 
                       
                 </div>
@@ -79,26 +87,34 @@
                     </div>
                     <div class="article-right-table">
                         <table>
-                            <tr>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Quantity</th>
-                                <th>Sell</th>
-                            </tr> 
-                            <tr>
-                                <td>
-                                    <p>gtgtgtgtg</p>
-                                </td>
-                                <td>
-                                    <p>gtgtgtgtg</p>
-                                </td>
-                                <td>
-                                    <p>gtgtgtgtg</p>
-                                </td>
-                                <td>
-                                    <p>gtgtgtgtg</p>
-                                </td>                             
-                            </tr>
+                            <?php 
+                                $liste_package = liste_package($bdd);                                
+                                if ($liste_package == "No elements found"){
+                                    echo "
+                                    <tr>
+                                        <th> No elements found</th>
+                                    </tr>
+                                    ";
+                                }
+                                else{
+                                    echo "
+                                    <tr>
+                                        <th>Name</th>                                
+                                        <th>Description</th>
+                                        <th>Quantity</th>
+                                        <th>Add</th>
+                                    </tr>
+                                    ";
+                                    while($enregistrement=$liste_package->fetchObject()){
+                                        echo "<tr id='$enregistrement->pack_id'>";
+                                        echo "<td> $enregistrement->pack_name</td>";
+                                        echo "<td> $enregistrement->pack_desc</td>";
+                                        echo "<td> $enregistrement->pack_quantity</td>";
+                                        echo "<td> </td>";
+                                        echo "</tr>";
+                                    }
+                                }
+                            ?>  
                         </table>
                     </div>                
                 </div>

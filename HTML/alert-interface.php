@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Alert</title>
         <link rel="stylesheet" href="../CSS/style-nav-bar.css">
         <link rel="stylesheet" href="../CSS/alert-mang-style.css">
         <link rel="icon" href="../images/pills.png">
@@ -19,13 +19,13 @@
                 <div class="links">
                     <ul>
                         <li>
-                            <a href="medic-mang.html">Medication</a>
+                            <a href="medic-mang.php">Medication</a>
                         </li>
                         <li>
-                            <a href="pack-mang.html">Packaging Material</a>
+                            <a href="pack-mang.php">Packaging Material</a>
                         </li>
                         <li>
-                            <a href="stock-mang.html">Invoice</a>
+                            <a href="stock-mang.php">Invoice</a>
                         </li>                                    
                     </ul>
                 </div>
@@ -38,12 +38,12 @@
                 </div>
                 <div class="alert-logout">
                     <div class="alert">
-                        <a href="alert-interface.html">
+                        <a href="alert-interface.php">
                             <i id="alert-1" class="fa-solid fa-bell"></i>
                             <i id="alert-2" class="fa-solid fa-bell fa-shake"></i>
                         </a>
                     </div>
-                    <a href="../index.html"><button type="button" name="logout"><i class="fa-solid fa-right-from-bracket"></i></button>                                          </a>
+                    <a href="../index.php"><button type="button" name="logout"><i class="fa-solid fa-right-from-bracket"></i></button>                                          </a>
 
                       
                 </div>
