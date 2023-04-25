@@ -45,7 +45,7 @@
                             <i id="alert-2" class="fa-solid fa-bell fa-shake"></i>
                         </a>
                     </div>                  
-                    <a href="../index.html"><button type="button" name="logout"><i class="fa-solid fa-right-from-bracket"></i></button>                                          </a>
+                    <a href="../index.php"><button type="button" name="logout"><i class="fa-solid fa-right-from-bracket"></i></button>                                          </a>
                 </div>
             </nav>
             <article>

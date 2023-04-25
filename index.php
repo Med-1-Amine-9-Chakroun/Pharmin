@@ -1,3 +1,7 @@
+<?php
+include('PHP/login.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -17,14 +21,14 @@
                 <hr class="hr1">
                 <h1>Login</h1>
                 <hr class="hr2">
-                <form action="" method="post">
+                <form action="PHP/login.php" method="post">
                     <div class="form-comtainer">
                         <label for="username">User Name :</label><br>
-                        <input type="text" placeholder="Enter your UserName" name="" id="username">
+                        <input type="text" placeholder="Enter your UserName" name="username" id="username">
                         <label for="Password">Password :</label><br>
-                        <input type="password" placeholder="Enter your Password" name="" id="Password"> 
-                        <p class="error-msg"  id="error-msg"></p>
-                        <input type="submit" class="login-btn" value="LOGIN">
+                        <input type="password" placeholder="Enter your Password" name="password" id="Password"> 
+                        <p class="error-msg"  id="error-msg"><?php if (isset($_GET['err'])){echo $_GET['err'];} ?></p>
+                        <input type="submit" name="login-btn" class="login-btn" value="LOGIN">
                     </div>    
                 </form>
                 <a href="#"><p>Forgot Password ..!</p></a>
@@ -36,3 +40,4 @@
         </div>
     </body>
 </html>
+
