@@ -10,50 +10,8 @@ function liste_medic($bdd){
         return "No elements found";
     }
 }
-function add_medic(){
-    include('../PHP/DbConnexion.php');
-$bdd = maConnexion();
+function add_medic($bdd, $name, $code, $type, $date, $units, $quantity){
 
-    if(isset($_POST['name']) && !empty($_POST['name']))
-    //quote pour proteger data
-        $name=$bdd->quote($_POST['name']);
-    else {
-        header("location: ../HTML/medic-mang.php?err=Please fill all the fields");   
-    }
-        
-        
-
-    if(isset($_POST['code']) && !empty($_POST['code']))
-        //quote pour proteger data
-        $code=$bdd->quote($_POST['code']);
-    else {
-        header("location: ../HTML/medic-mang.php?err=Please fill all the fields");   
-        }
-    if(isset($_POST['type']) && !empty($_POST['type']))
-            //quote pour proteger data
-        $type=$bdd->quote($_POST['type']);
-    else {
-        header("location: ../HTML/medic-mang.php?err=Please fill all the fields");   
-    }
-    if(isset($_POST['date']) && !empty($_POST['date']))
-        //quote pour proteger data
-        $date=$bdd->quote($_POST['date']);
-    else {
-        header("location: ../HTML/medic-mang.php?err=Please fill all the fields");   
-    }    
-   
-    if(isset($_POST['units']) && !empty($_POST['units']))
-        //quote pour proteger data
-        $units=$bdd->quote($_POST['units']);
-    else {
-        header("location: ../HTML/medic-mang.php?err=Please fill all the fields");   
-    }
-    if(isset($_POST['quantity']) && !empty($_POST['quantity']))
-        //quote pour proteger data
-        $quantity=$bdd->quote($_POST['quantity']);
-        else {
-            header("location: ../HTML/medic-mang.php?err=Please fill all the fields");   
-        }
   
     $sql="INSERT INTO medication (medic_name, medic_code, medic_type, expiration_date, units, quantity, statee) 
     VALUES($name,$code,$type,$date,$units,$quantity, 1)";
@@ -66,7 +24,50 @@ $bdd = maConnexion();
 }
 
 if (isset($_POST['add'])){
-    add_medic();
+    include('../PHP/DbConnexion.php');
+    $bdd = maConnexion();
+    
+        if(isset($_POST['name']) && !empty($_POST['name']))
+        //quote pour proteger data
+            $name=$bdd->quote($_POST['name']);
+        else {
+            header("location: ../HTML/medic-mang.php?err=Please fill all the fields");   
+        }
+            
+            
+    
+        if(isset($_POST['code']) && !empty($_POST['code']))
+            //quote pour proteger data
+            $code=$bdd->quote($_POST['code']);
+        else {
+            header("location: ../HTML/medic-mang.php?err=Please fill all the fields");   
+            }
+        if(isset($_POST['type']) && !empty($_POST['type']))
+                //quote pour proteger data
+            $type=$bdd->quote($_POST['type']);
+        else {
+            header("location: ../HTML/medic-mang.php?err=Please fill all the fields");   
+        }
+        if(isset($_POST['date']) && !empty($_POST['date']))
+            //quote pour proteger data
+            $date=$bdd->quote($_POST['date']);
+        else {
+            header("location: ../HTML/medic-mang.php?err=Please fill all the fields");   
+        }    
+       
+        if(isset($_POST['units']) && !empty($_POST['units']))
+            //quote pour proteger data
+            $units=$bdd->quote($_POST['units']);
+        else {
+            header("location: ../HTML/medic-mang.php?err=Please fill all the fields");   
+        }
+        if(isset($_POST['quantity']) && !empty($_POST['quantity']))
+            //quote pour proteger data
+            $quantity=$bdd->quote($_POST['quantity']);
+            else {
+                header("location: ../HTML/medic-mang.php?err=Please fill all the fields");   
+            }
+    add_medic($bdd, $name, $code, $type, $date, $units, $quantity);
 }  
 
 ?>

@@ -64,13 +64,13 @@ $bdd = maConnexion();
                     <form Action="" method="post">
                         <div class="div-1">
                             <label for="medicName">Medication Name :</label>
-                            <input type="text" placeholder="Enter Medication Name" name="name" id="medicName" required>
+                            <input type="text" placeholder="Enter Medication Name" name="name" id="medicName" >
                             <label for="medicCode">Medication Code :</label>
-                            <input type="text" placeholder="Enter Medication Code" name="code" id="medicCode" required>                             
+                            <input type="text" placeholder="Enter Medication Code" name="code" id="medicCode" >                             
                         </div>
                         <div class="div-2">
                             <label for="type">Medicine Type :</label>
-                            <select name="type" id="type" required>
+                            <select name="type" id="type" >
                                 <option value="---">---</option>
                                 <option value="Capsules">Capsules</option>
                                 <option value="Liquids">Liquids</option>
@@ -81,13 +81,13 @@ $bdd = maConnexion();
                                 <option value="Injectables">Injectables</option>
                             </select>  
                             <label for="date">Expiration date :</label>    
-                            <input type="date" name="date" id="date" required> 
+                            <input type="date" name="date" id="date" > 
                         </div>
                         
                         <div class="article-left-quantity">
                             <div class="article-left-quantity-units">
                                 <label for="units">Units :</label>
-                                <select name="units" id="units" required>
+                                <select name="units" id="units" >
                                     <option value="---">---</option>
                                     <option value="Milliliters">Milliliters</option>
                                     <option value="Milligrams">Milligrams</option>
@@ -96,14 +96,14 @@ $bdd = maConnexion();
                             </div>
                             <div class="article-left-quantity-value">
                                 <label for="quantity">Quantity :</label>
-                                <input type="text" placeholder="Enter Quantity" name="quantity" id="quantity" required>                                                         
+                                <input type="text" placeholder="Enter Quantity" name="quantity" id="quantity" >                                                         
                             </div>
                         </div>      
                         <div class="div-3">                            
                             <input type="submit" name="add" class="add-btn" value="ADD">
-                            <p class="error-msg"  id="error-msg"></p>
+                            <p class="error-msg"  id="error-msg"><?php if (isset($_GET['err'])){echo $_GET['err'];} ?></p>
                         </div>
-
+                 
                     </form>
                 </div>
                 <div class="article-right">
