@@ -90,7 +90,7 @@ $bdd = maConnexion();
                                         echo "<td> $enregistrement->medic_type</td>";
                                         echo "<td> $enregistrement->expiration_date</td>";
                                         echo "<td> $enregistrement->quantity</td>";
-                                        echo "<td> </td>";
+                                        echo "<th> <i class='fa-solid fa-circle-plus' style='color: #2d2e2f;'></i></th>";
                                         echo "</tr>";
                                     }
                                 }
@@ -127,7 +127,7 @@ $bdd = maConnexion();
                                         echo "<td> $enregistrement->pack_name</td>";
                                         echo "<td> $enregistrement->pack_desc</td>";
                                         echo "<td> $enregistrement->pack_quantity</td>";
-                                        echo "<td> </td>";
+                                        echo "<th> <i class='fa-solid fa-circle-plus' style='color: #2d2e2f;'></i></th>";
                                         echo "</tr>";
                                     }
                                 }
@@ -145,13 +145,13 @@ $bdd = maConnexion();
                         <label for="desc">Medication Code :</label>
                         <input type="text" id="desc" class="" placeholder="Enter Code" required>
                         <label for="quantity">Quantity :</label>
-                        <input type="text" id="quantity" class="" placeholder="Enter Quantity" required>
+                        <input type="number" id="quantity" class="" placeholder="Enter Quantity" required>
                         <label for="name">Package Name :</label>
                         <input type="text" id="name" class="" placeholder="Enter Name" required>
                         <label for="desc">Packege Code :</label>
                         <input type="text" id="desc" class="" placeholder="Enter Code" required>
                         <label for="quantity">Quantity :</label>
-                        <input type="text" id="quantity" class="" placeholder="Enter Quantity" required>
+                        <input type="number" id="quantity" class="" placeholder="Enter Quantity" required>
                         <p class="error-msg"  id="error-msg"></p>
                         <button type="submit" class="add-btn">ADD</button>                        
                     </form> 

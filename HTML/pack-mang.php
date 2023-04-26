@@ -110,7 +110,7 @@ $bdd = maConnexion();
                                         echo "<td> $enregistrement->pack_name</td>";
                                         echo "<td> $enregistrement->pack_desc</td>";
                                         echo "<td> $enregistrement->pack_quantity</td>";
-                                        echo "<td> </td>";
+                                        echo "<th> <i class='fa-solid fa-circle-plus' style='color: #2d2e2f;'></i></th>";
                                         echo "</tr>";
                                     }
                                 }

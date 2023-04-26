@@ -172,7 +172,7 @@ $bdd = maConnexion();
                                         echo "<td> $enregistrement->medic_type</td>";
                                         echo "<td> $enregistrement->quantity</td>";
                                         echo "<td> $enregistrement->expiration_date</td>";
-                                        echo "<td> </td>";
+                                        echo "<th> <i class='fa-solid fa-circle-plus' style='color: #2d2e2f;'></i></th>";
                                         echo "</tr>";
                                     }
                                 }
