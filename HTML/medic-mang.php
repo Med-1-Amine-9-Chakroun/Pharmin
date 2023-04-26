@@ -114,20 +114,39 @@ $bdd = maConnexion();
                         <p class="error-msg-search"></p>
                         <form action="" method="post">
                             <label for="felt-opt">Filtering options :</label>
-                            <select name="" id="felt-opt">
-                                <option value="">All</option>
-                                <option value="">Name</option>
-                                <option value="">Code</option>
-                                <option value="">Type</option>
+                            <select name="opt" id="felt-opt">
+                                <option value="All">All</option>
+                                <option value="Name">Name</option>
+                                <option value="Code">Code</option>
+                                <option value="Type">Type</option>
                             </select>
-                            <input type="text" placeholder="Type something">
-                            <button type="submit" id="search-btn" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>                            
+                            <input type="text" name="critere" placeholder="Type something">
+                            <button type="submit" name="search-btn" id="search-btn" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>                            
                         </form>
                     </div>
                     <div class="article-right-table">
                         <table> 
                             <?php
+                            if (isset($_GET['cri'])){
+                                $array = explode("/", $_GET['cri']);
+                                if ($array[0]=="All"){
+                                    $list_medic = liste_medic($bdd);
+                                }
+                                else if ($array[0]=="Name"){
+                                    $list_medic = liste_medic_name($bdd, $array[1]);
+                                }
+                                if ($array[0]=="Code"){
+                                    $list_medic = liste_medic_code($bdd, $array[1]);
+                                }
+                                if ($array[0]=="Type"){
+                                    $list_medic = liste_medic_type($bdd, $array[1]);
+                                }
+
+                            }
+                            else{
                                 $list_medic = liste_medic($bdd);
+                            }
+                                
                                 if ($list_medic == "No elements found"){
                                     echo "
                                     <tr>

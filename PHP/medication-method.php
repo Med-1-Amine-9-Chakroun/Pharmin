@@ -10,9 +10,41 @@ function liste_medic($bdd){
         return "No elements found";
     }
 }
-function add_medic($bdd, $name, $code, $type, $date, $units, $quantity){
 
-  
+function liste_medic_name($bdd, $name){
+    $requete = "SELECT * FROM medication WHERE statee = 1 AND medic_name = '$name'";
+    $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);    
+    if ($response->rowCount()>0){
+        return $response;
+    }
+    else{
+        return "No elements found";
+    }
+}
+
+function liste_medic_code($bdd, $code){
+    $requete = "SELECT * FROM medication WHERE statee = 1 AND medic_code = '$code'";
+    $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
+    if ($response->rowCount()>0){
+        return $response;
+    }
+    else{
+        return "No elements found";
+    }
+}
+
+function liste_medic_type($bdd, $type){
+    $requete = "SELECT * FROM medication WHERE statee = 1 AND medic_type = '$type'";
+    $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
+    if ($response->rowCount()>0){
+        return $response;
+    }
+    else{
+        return "No elements found";
+    }
+}
+
+function add_medic($bdd, $name, $code, $type, $date, $units, $quantity){
     $sql="INSERT INTO medication (medic_name, medic_code, medic_type, expiration_date, units, quantity, statee) 
     VALUES($name,$code,$type,$date,$units,$quantity, 1)";
     $nblignes=$bdd->exec($sql);
@@ -69,5 +101,8 @@ if (isset($_POST['add'])){
             }
     add_medic($bdd, $name, $code, $type, $date, $units, $quantity);
 }  
-
+if (isset($_POST["search-btn"])){
+    $par = $_POST['opt']."/".$_POST['critere'];
+    header("location: ../HTML/medic-mang.php?cri=$par");   
+}
 ?>
