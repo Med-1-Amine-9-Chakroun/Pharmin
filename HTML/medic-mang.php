@@ -61,46 +61,46 @@ $bdd = maConnexion();
                     <div class="article-left-head">
                         <h1>Add Medication</h1>
                     </div>                    
-                    <form action="" method="post">
+                    <form Action="" method="post">
                         <div class="div-1">
                             <label for="medicName">Medication Name :</label>
-                            <input type="text" placeholder="Enter Medication Name" name="" id="medicName" required>
+                            <input type="text" placeholder="Enter Medication Name" name="name" id="medicName" required>
                             <label for="medicCode">Medication Code :</label>
-                            <input type="text" placeholder="Enter Medication Code" name="" id="medicCode" required>                             
+                            <input type="text" placeholder="Enter Medication Code" name="code" id="medicCode" required>                             
                         </div>
                         <div class="div-2">
                             <label for="type">Medicine Type :</label>
-                            <select name="" id="type" required>
-                                <option value="">---</option>
-                                <option value="">Capsules</option>
-                                <option value="">Liquids</option>
-                                <option value="">Powders</option>
-                                <option value="">Topical gels and creams</option>
-                                <option value="">Suppositories</option>
-                                <option value="">Inhalers</option>
-                                <option value="">Injectables</option>
+                            <select name="type" id="type" required>
+                                <option value="---">---</option>
+                                <option value="Capsules">Capsules</option>
+                                <option value="Liquids">Liquids</option>
+                                <option value="Powders">Powders</option>
+                                <option value="Topical gels and creams">Topical gels and creams</option>
+                                <option value="Suppositories">Suppositories</option>
+                                <option value="Inhalers">Inhalers</option>
+                                <option value="Injectables">Injectables</option>
                             </select>  
                             <label for="date">Expiration date :</label>    
-                            <input type="date" id="date" required> 
+                            <input type="date" name="date" id="date" required> 
                         </div>
                         
                         <div class="article-left-quantity">
                             <div class="article-left-quantity-units">
                                 <label for="units">Units :</label>
-                                <select name="" id="units" required>
-                                    <option value="">---</option>
-                                    <option value="">Milliliters</option>
-                                    <option value="">Milligrams</option>
-                                    <option value="">Units</option>
+                                <select name="units" id="units" required>
+                                    <option value="---">---</option>
+                                    <option value="Milliliters">Milliliters</option>
+                                    <option value="Milligrams">Milligrams</option>
+                                    <option value="Units">Units</option>
                                 </select>
                             </div>
                             <div class="article-left-quantity-value">
                                 <label for="quantity">Quantity :</label>
-                                <input type="text" placeholder="Enter Quantity" name="" id="quantity" required>                                                         
+                                <input type="text" placeholder="Enter Quantity" name="quantity" id="quantity" required>                                                         
                             </div>
                         </div>      
                         <div class="div-3">                            
-                            <input type="submit" class="add-btn" value="ADD">
+                            <input type="submit" name="add" class="add-btn" value="ADD">
                             <p class="error-msg"  id="error-msg"></p>
                         </div>
 

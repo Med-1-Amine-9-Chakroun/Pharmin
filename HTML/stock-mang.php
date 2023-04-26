@@ -64,6 +64,7 @@ $bdd = maConnexion();
                     <div class="article-left-table">
                         <table>
                             <?php
+                            
                                 $list_medic = liste_medic($bdd);
                                 if ($list_medic == "No elements found"){
                                     echo "
@@ -93,6 +94,7 @@ $bdd = maConnexion();
                                         echo "</tr>";
                                     }
                                 }
+                                
                             ?>
                        
                         </table>

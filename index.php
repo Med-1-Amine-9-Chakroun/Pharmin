@@ -1,6 +1,7 @@
 <?php
 include('PHP/login.php');
-
+include('PHP/DbConnexion.php');
+$bdd = maConnexion();
 ?>
 <!DOCTYPE html>
 <html lang="en">

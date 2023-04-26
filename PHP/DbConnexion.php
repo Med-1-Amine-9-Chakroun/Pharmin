@@ -6,8 +6,8 @@ function maConnexion(){
         $bdd = new PDO('mysql:host=localhost;dbname=pharmin','root','');
         $bdd->query("SET NAMES 'utf8'");
         return $bdd;
-    }catch (PDOException $e){    
-        die('Erreur:'.$e->getMessage());
+    }catch (PDOException $e){  
+        echo $e->getMessage();
     }
 }
 
