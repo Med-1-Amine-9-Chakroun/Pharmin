@@ -20,6 +20,7 @@ $bdd = maConnexion();
         <link rel="icon" href="../images/pills.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     </head>
+    <script src="../JS/stock-mang.js"></script>
     <body>
         <section>
             <nav>
@@ -127,7 +128,7 @@ $bdd = maConnexion();
                                         echo "<td> $enregistrement->pack_name</td>";
                                         echo "<td> $enregistrement->pack_desc</td>";
                                         echo "<td> $enregistrement->pack_quantity</td>";
-                                        echo "<th> <i class='fa-solid fa-circle-plus' style='color: #2d2e2f;'></i></th>";
+                                        echo "<th  onclick='stockPackTab(1)'><i class='fa-solid fa-circle-plus' style='color: #2d2e2f;'></i></th>";
                                         echo "</tr>";
                                     }
                                 }
@@ -141,15 +142,15 @@ $bdd = maConnexion();
                     </div>
                     <form action="" method="post">
                         <label for="name">Medication Name :</label>
-                        <input type="text" id="name" class="" placeholder="Enter Name" required>
-                        <label for="desc">Medication Code :</label>
-                        <input type="text" id="desc" class="" placeholder="Enter Code" required>
+                        <input type="text" id="name" class="" placeholder="Enter Name" required readonly>
+                        <label for="desc">Medication ID :</label>
+                        <input type="text" id="desc" class="" placeholder="Enter Code" required readonly>
                         <label for="quantity">Quantity :</label>
                         <input type="number" id="quantity" class="" placeholder="Enter Quantity" required>
                         <label for="name">Package Name :</label>
-                        <input type="text" id="name" class="" placeholder="Enter Name" required>
-                        <label for="desc">Packege Code :</label>
-                        <input type="text" id="desc" class="" placeholder="Enter Code" required>
+                        <input type="text" id="name" class="" placeholder="Enter Name" required readonly> 
+                        <label for="desc">Packege ID :</label>
+                        <input type="text" id="desc" class="" placeholder="Enter Code" required readonly>
                         <label for="quantity">Quantity :</label>
                         <input type="number" id="quantity" class="" placeholder="Enter Quantity" required>
                         <p class="error-msg"  id="error-msg"></p>

@@ -5,7 +5,7 @@ function login ($bdd, $username, $password){
     AND pass = $password";
     $reponse=$bdd->query($requete) or die ($bdd->errorInfo()[2]);
     if ($reponse->rowCount()>0){
-        header("location: ../HTML/stock-mang.php?c=1");
+        header("location: ../HTML/stock-mang.php");
     }
     else{
         header("location: ../index.php?err=Incorrect username ot password"); 
@@ -13,7 +13,6 @@ function login ($bdd, $username, $password){
 }   
 if (isset($_POST['login-btn'])){
     include("DbConnexion.php");
-
     $bdd = maConnexion();
 
     if(isset($_POST['username']) && !empty($_POST['username']))
@@ -24,7 +23,6 @@ if (isset($_POST['login-btn'])){
         $password=$bdd->quote($_POST['password']);
     else 
         header("location: ../index.php?err=Please fill all the fields");   
-
     login($bdd, $username, $password);
 }
 
