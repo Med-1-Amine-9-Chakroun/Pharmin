@@ -111,7 +111,7 @@ $bdd = maConnexion();
                         <h1>List Of Medications</h1>
                     </div>
                     <div class="article-right-search">
-                        <p class="error-msg-search"></p>
+                        <p class="error-msg-search"><?php if (isset($_GET['errcri'])){ echo $_GET['errcri']; } ?></p>
                         <form action="" method="post">
                             <label for="felt-opt">Filtering options :</label>
                             <select name="opt" id="felt-opt">

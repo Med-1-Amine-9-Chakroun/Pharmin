@@ -102,7 +102,14 @@ if (isset($_POST['add'])){
     add_medic($bdd, $name, $code, $type, $date, $units, $quantity);
 }  
 if (isset($_POST["search-btn"])){
-    $par = $_POST['opt']."/".$_POST['critere'];
-    header("location: ../HTML/medic-mang.php?cri=$par");   
+    if(isset($_POST['critere']) && !empty($_POST['critere'])){
+        $par = $_POST['opt']."/".$_POST['critere'];
+        header("location: ../HTML/medic-mang.php?cri=$par"); 
+    }
+    else {
+        header("location: ../HTML/medic-mang.php?errcri=Please Type SomeThing");   
+    }
+
+  
 }
 ?>

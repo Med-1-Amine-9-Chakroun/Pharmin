@@ -64,13 +64,13 @@ $bdd = maConnexion();
                     </div>    
                     <form action="" method="post">
                         <label for="name">Name :</label>
-                        <input type="text" id="name" class="" placeholder="Enter Name" required>
+                        <input type="text" id="name" name="name" placeholder="Enter Name" >
                         <label for="desc">Description :</label>
-                        <input type="text" id="desc" class="" placeholder="Enter Description" required>
+                        <input type="text" id="desc" name="desc" placeholder="Enter Description" >
                         <label for="quantity">Quantity :</label>
-                        <input type="text" id="quantity" class="" placeholder="Enter Quantity" required>
-                        <p class="error-msg"  id="error-msg"></p>
-                        <button type="submit" class="add-btn">ADD</button>                        
+                        <input type="text" id="quantity" name="quantity" placeholder="Enter Quantity" >
+                        <p class="error-msg"  id="error-msg"><?php if (isset($_GET['err'])){ echo $_GET['err'];} ?></p>
+                        <button type="submit" name="add-btn" class="add-btn">ADD</button>                        
                     </form>                
                 </div>
                 <div class="article-right">
