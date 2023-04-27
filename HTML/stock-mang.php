@@ -144,19 +144,19 @@ $bdd = maConnexion();
                     </div>
                     <form action="" method="post">
                         <label for="name">Medication Name :</label>
-                        <input type="text" id="namemed" class="" placeholder="Enter Name" required readonly>
+                        <input type="text" id="namemed" name="namemed" class="" placeholder="Enter Name" required readonly>
                         <label for="desc">Medication ID :</label>
-                        <input type="text" id="idmed" class="" placeholder="Enter Code" required readonly>
+                        <input type="text" id="idmed" name="idmed" class="" placeholder="Enter Code" required readonly>
                         <label for="quantity">Quantity :</label>
-                        <input type="number" id="quantitypack" class="" placeholder="Enter Quantity" required>
+                        <input type="number" id="quantitymed" name="quantitymed" max = 0 class="" placeholder="Enter Quantity" required>
                         <label for="name">Package Name :</label>
-                        <input type="text" id="namepack" class="" placeholder="Enter Name" required readonly> 
+                        <input type="text" id="namepack" name="namepack" class="" placeholder="Enter Name" required readonly> 
                         <label for="desc">Packege ID :</label>
-                        <input type="text" id="idpack" class="" placeholder="Enter Code" required readonly>
+                        <input type="text" id="idpack" name="idpack" class="" placeholder="Enter Code" required readonly>
                         <label for="quantity">Quantity :</label>
-                        <input type="number" id="quantitypack" class="" placeholder="Enter Quantity" required>
+                        <input type="number" id="quantitypack" name="quantitypack" max = 0 class="" placeholder="Enter Quantity" required>
                         <p class="error-msg"  id="error-msg"></p>
-                        <button type="submit" class="add-btn">ADD</button>                        
+                        <button type="submit" class="add-btn" name="add-btn">ADD</button>                        
                     </form> 
                 </div>
             </article>

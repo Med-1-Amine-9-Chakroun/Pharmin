@@ -44,6 +44,18 @@ function liste_medic_type($bdd, $type){
     }
 }
 
+
+function liste_medic_id($bdd, $id){
+    $requete = "SELECT * FROM medication WHERE statee = 1 AND medic_id = '$id'";
+    $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
+    if ($response->rowCount()>0){
+        return $response;
+    }
+    else{
+        return "No elements found";
+    }
+}
+
 function add_medic($bdd, $name, $code, $type, $date, $units, $quantity){
     $sql="INSERT INTO medication (medic_name, medic_code, medic_type, expiration_date, units, quantity, statee) 
     VALUES($name,$code,$type,$date,$units,$quantity, 1)";
