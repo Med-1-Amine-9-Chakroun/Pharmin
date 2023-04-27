@@ -85,13 +85,14 @@ $bdd = maConnexion();
                                         </tr>
                                     ";
                                     while($enregistrement=$list_medic->fetchObject()){
-                                        echo "<tr id='$enregistrement->medic_id'>";
+                                        $id = $enregistrement->medic_id."/med";
+                                        echo "<tr id='$id'>";
                                         echo "<td> $enregistrement->medic_name</td>";
                                         echo "<td> $enregistrement->medic_code</td>";
                                         echo "<td> $enregistrement->medic_type</td>";
                                         echo "<td> $enregistrement->expiration_date</td>";
                                         echo "<td> $enregistrement->quantity</td>";
-                                        echo "<th> <i class='fa-solid fa-circle-plus' style='color: #2d2e2f;'></i></th>";
+                                        echo "<th onclick='stockPackTab(this.parentNode)'><i class='fa-solid fa-circle-plus' style='color: #2d2e2f;'></i></th>";
                                         echo "</tr>";
                                     }
                                 }
@@ -104,7 +105,7 @@ $bdd = maConnexion();
                         <h1>Packaging Material</h1>
                     </div>
                     <div class="article-left-table">
-                        <table>
+                        <table id="package">
                             <?php 
                                 $liste_package = liste_package($bdd);                                
                                 if ($liste_package == "No elements found"){
@@ -124,11 +125,12 @@ $bdd = maConnexion();
                                     </tr>
                                     ";
                                     while($enregistrement=$liste_package->fetchObject()){
-                                        echo "<tr id='$enregistrement->pack_id'>";
+                                        $id = $enregistrement->pack_id."/package";
+                                        echo "<tr id='$id'>";
                                         echo "<td> $enregistrement->pack_name</td>";
                                         echo "<td> $enregistrement->pack_desc</td>";
                                         echo "<td> $enregistrement->pack_quantity</td>";
-                                        echo "<th  onclick='stockPackTab(1)'><i class='fa-solid fa-circle-plus' style='color: #2d2e2f;'></i></th>";
+                                        echo "<th onclick='stockPackTab(this.parentNode)'><i class='fa-solid fa-circle-plus' style='color: #2d2e2f;'></i></th>";
                                         echo "</tr>";
                                     }
                                 }
@@ -142,17 +144,17 @@ $bdd = maConnexion();
                     </div>
                     <form action="" method="post">
                         <label for="name">Medication Name :</label>
-                        <input type="text" id="name" class="" placeholder="Enter Name" required readonly>
+                        <input type="text" id="namemed" class="" placeholder="Enter Name" required readonly>
                         <label for="desc">Medication ID :</label>
-                        <input type="text" id="desc" class="" placeholder="Enter Code" required readonly>
+                        <input type="text" id="idmed" class="" placeholder="Enter Code" required readonly>
                         <label for="quantity">Quantity :</label>
-                        <input type="number" id="quantity" class="" placeholder="Enter Quantity" required>
+                        <input type="number" id="quantitypack" class="" placeholder="Enter Quantity" required>
                         <label for="name">Package Name :</label>
-                        <input type="text" id="name" class="" placeholder="Enter Name" required readonly> 
+                        <input type="text" id="namepack" class="" placeholder="Enter Name" required readonly> 
                         <label for="desc">Packege ID :</label>
-                        <input type="text" id="desc" class="" placeholder="Enter Code" required readonly>
+                        <input type="text" id="idpack" class="" placeholder="Enter Code" required readonly>
                         <label for="quantity">Quantity :</label>
-                        <input type="number" id="quantity" class="" placeholder="Enter Quantity" required>
+                        <input type="number" id="quantitypack" class="" placeholder="Enter Quantity" required>
                         <p class="error-msg"  id="error-msg"></p>
                         <button type="submit" class="add-btn">ADD</button>                        
                     </form> 
