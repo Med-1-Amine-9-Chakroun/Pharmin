@@ -1,9 +1,14 @@
 <?php  
+session_start(); 
+
+if (isset($_SESSION['username'])){
 require_once('../PHP/medication-method.php');
 require_once('../PHP/package-method.php');
 include('../PHP/invoce-method.php');
 require_once('../PHP/DbConnexion.php');
 $bdd = maConnexion();
+
+
 
 ?>
 
@@ -55,7 +60,7 @@ $bdd = maConnexion();
                             <i id="alert-2" class="fa-solid fa-bell fa-shake"></i>
                         </a>
                     </div>                  
-                    <a href="../index.php"><button type="button" name="logout"><i class="fa-solid fa-right-from-bracket"></i></button>                                          </a>
+                    <a href="../logout.php"><button type="button" name="logout"><i class="fa-solid fa-right-from-bracket"></i></button>                                          </a>
                 </div>
             </nav>
             <article>
@@ -166,3 +171,10 @@ $bdd = maConnexion();
         <footer></footer>
     </body>
 </html>
+
+<?php 
+}
+else{
+    header("location: ../index.php?"); 
+}
+?>

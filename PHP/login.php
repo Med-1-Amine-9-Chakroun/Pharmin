@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 function login ($bdd, $username, $password){
     $requete="SELECT * FROM adminn 
     WHERE username = $username
@@ -6,6 +7,7 @@ function login ($bdd, $username, $password){
     $reponse=$bdd->query($requete) or die ($bdd->errorInfo()[2]);
     if ($reponse->rowCount()>0){
         header("location: ../HTML/stock-mang.php");
+        $_SESSION['username']=$username;
     }
     else{
         header("location: ../index.php?err=Incorrect username ot password"); 

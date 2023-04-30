@@ -1,4 +1,8 @@
 <?php  
+session_start(); 
+
+if (isset($_SESSION['username'])){
+
 include('../PHP/package-method.php');
 include('../PHP/DbConnexion.php');
 $bdd = maConnexion();
@@ -52,7 +56,7 @@ $bdd = maConnexion();
                             <i id="alert-2" class="fa-solid fa-bell fa-shake"></i>
                         </a>
                     </div>
-                    <a href="../index.php"><button type="button" name="logout"><i class="fa-solid fa-right-from-bracket"></i></button>                                          </a>
+                    <a href="../logout.php"><button type="button" name="logout"><i class="fa-solid fa-right-from-bracket"></i></button>                                          </a>
 
                       
                 </div>
@@ -123,3 +127,10 @@ $bdd = maConnexion();
         <footer></footer>
     </body>
 </html>
+
+<?php 
+}
+else{
+    header("location: ../index.php?"); 
+}
+?>

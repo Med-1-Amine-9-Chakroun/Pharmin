@@ -150,10 +150,6 @@ if (isset($_POST["search-btn"])){
 }
 
 if (isset($_POST['btn_sup'])){
-    
-
-
-    
     require_once('../PHP/DbConnexion.php');
     $bdd = maConnexion(); 
     //quote pour proteger les caractere spéciaux
