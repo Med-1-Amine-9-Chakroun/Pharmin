@@ -21,8 +21,16 @@ function liste_package_name($bdd, $name){
     }
 }   
 
-
-
+function liste_pack_id($bdd, $id){
+    $requete = "SELECT * FROM package  AND pack_id = '$id'";
+    $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
+    if ($response->rowCount()>0){
+        return $response;
+    }
+    else{
+        return "No elements found";
+    }
+}
 
 function add_package($bdd, $name, $desc, $quantity){
     $sql="INSERT INTO package (pack_name, pack_desc, pack_quantity) 

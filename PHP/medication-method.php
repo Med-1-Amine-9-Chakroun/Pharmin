@@ -1,7 +1,7 @@
 <?php 
 
 function liste_medic($bdd){
-    $requete = "SELECT * FROM medication WHERE statee = 1";
+    $requete = "SELECT * FROM medication WHERE statee = 1 and quantity > 0 and expiration_date >= NOW()";
     $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
     if ($response->rowCount()>0){
         return $response;
@@ -11,8 +11,34 @@ function liste_medic($bdd){
     }
 }
 
+
+function liste_medic_o_o_s($bdd){
+    $requete = "SELECT * FROM medication WHERE  quantity <= 0 ";
+    $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
+    if ($response->rowCount()>0){
+        return $response;
+    }
+    else{
+        return "No elements found";
+    }
+}
+
+
+function liste_medic_expired($bdd){
+    $requete = "SELECT * FROM medication WHERE  expiration_date <= NOW() ";
+    $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
+    if ($response->rowCount()>0){
+        return $response;
+    }
+    else{
+        return "No elements found";
+    }
+}
+
+
+
 function liste_medic_name($bdd, $name){
-    $requete = "SELECT * FROM medication WHERE statee = 1 AND medic_name = '$name'";
+    $requete = "SELECT * FROM medication WHERE statee = 1 AND medic_name = '$name' and quantity > 0 and expiration_date >= NOW()" ;
     $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);    
     if ($response->rowCount()>0){
         return $response;
@@ -23,7 +49,7 @@ function liste_medic_name($bdd, $name){
 }
 
 function liste_medic_code($bdd, $code){
-    $requete = "SELECT * FROM medication WHERE statee = 1 AND medic_code = '$code'";
+    $requete = "SELECT * FROM medication WHERE statee = 1 AND medic_code = '$code' and quantity > 0 and expiration_date >= NOW()";
     $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
     if ($response->rowCount()>0){
         return $response;
@@ -34,7 +60,7 @@ function liste_medic_code($bdd, $code){
 }
 
 function liste_medic_type($bdd, $type){
-    $requete = "SELECT * FROM medication WHERE statee = 1 AND medic_type = '$type'";
+    $requete = "SELECT * FROM medication WHERE statee = 1 AND medic_type = '$type' and quantity > 0 and expiration_date >= NOW()";
     $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
     if ($response->rowCount()>0){
         return $response;
@@ -46,7 +72,7 @@ function liste_medic_type($bdd, $type){
 
 
 function liste_medic_id($bdd, $id){
-    $requete = "SELECT * FROM medication WHERE statee = 1 AND medic_id = '$id'";
+    $requete = "SELECT * FROM medication WHERE statee = 1 AND medic_id = '$id' and quantity > 0 and expiration_date >= NOW()";
     $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
     if ($response->rowCount()>0){
         return $response;

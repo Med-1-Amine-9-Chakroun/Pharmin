@@ -1,3 +1,14 @@
+<?php  
+require_once('../PHP/medication-method.php');
+require_once('../PHP/package-method.php');
+
+require_once('../PHP/DbConnexion.php');
+$bdd = maConnexion();
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -54,14 +65,36 @@
                         <h1>Medication Out Of Stock</h1>
                     </div>
                     <div class="article-left-table">
-                        <table>
-                            <tr>
-                                <th>Name</th>
-                                <th>Code</th>
-                                <th>Description</th>
-                                <th>Stock</th>
-                                <th>Command</th>
-                            </tr>
+                        <table>                 
+                            <?php 
+                                $liste_medic = liste_medic_o_o_s($bdd);                                
+                                if ($liste_medic == "No elements found"){
+                                    echo "
+                                    <tr>
+                                        <th> No elements found</th>
+                                    </tr>
+                                    ";
+                                }
+                                else{
+                                    echo "
+                                    <tr>
+                                    <th>Name</th>
+                                    <th>Code</th>
+                                    <th>Type</th>                                    
+                                    <th>Command</th>
+                                    </tr>
+                                    ";
+                                    while($enregistrement=$liste_medic->fetchObject()){
+                                        $id = $enregistrement->pack_id."/package";
+                                        echo "<tr id='$id'>";
+                                        echo "<td> $enregistrement->medic_name</td>";
+                                        echo "<td> $enregistrement->medic_code</td>";
+                                        echo "<td> $enregistrement->medic_type</td>";
+                                        echo "<th onclick='stockPackTab(this.parentNode)'><i class='fa-solid fa-circle-plus' style='color: #2d2e2f;'></i></th>";
+                                        echo "</tr>";
+                                    }
+                                }
+                            ?>                    
                         </table>
                     </div>
                     <div class="article-left-head-2">
@@ -69,20 +102,40 @@
                     </div>
                     <div class="article-left-table">
                         <table>
-                            <tr>
-                                <th>Name</th>
-                                <th>Code</th>
-                                <th>Description</th>
-                                <th>Stock</th>
-                                <th>Command</th>
-                            </tr>
-                            <tr>
-                                <td>efefef</td>
-                                <td>efefef</td>
-                                <td>efefef</td>
-                                <td>efefef</td>
-                                <td>efefef</td>
-                            </tr>
+                            <?php
+                                $liste_medic_e = liste_medic_expired($bdd);                                
+                                if ($liste_medic_e == "No elements found"){
+                                    echo "
+                                        <tr>
+                                            <th> No elements found</th>
+                                        </tr>
+                                    ";
+                                }
+                                else{
+                                    echo "
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Code</th>
+                                            <th>Type</th>
+                                            <th>Stock</th>
+                                            <th>Expiration Date</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    ";
+                                    while($enregistrement=$liste_medic_e->fetchObject()){
+                                        $id = $enregistrement->pack_id."/package";
+                                        echo "<tr id='$id'>";
+                                        echo "<td> $enregistrement->medic_name</td>";
+                                        echo "<td> $enregistrement->medic_code</td>";
+                                        echo "<td> $enregistrement->medic_type</td>";
+                                        echo "<td> $enregistrement->quantity</td>";
+                                        echo "<td> $enregistrement->expiration_date</td>";
+                                        echo "<th onclick='stockPackTab(this.parentNode)'><i class='fa-solid fa-trash'></i></th>";
+                                        echo "</tr>";
+                                    }
+
+                                }
+                            ?> 
                         </table>
                     </div>
                 </div>
