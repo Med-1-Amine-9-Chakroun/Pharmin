@@ -1,7 +1,8 @@
 <?php  
-include('../PHP/medication-method.php');
-include('../PHP/package-method.php');
-include('../PHP/DbConnexion.php');
+require_once('../PHP/medication-method.php');
+require_once('../PHP/package-method.php');
+include('../PHP/invoce-method.php');
+require_once('../PHP/DbConnexion.php');
 $bdd = maConnexion();
 
 ?>
@@ -156,7 +157,7 @@ $bdd = maConnexion();
                         <label for="quantity">Quantity :</label>
                         <input type="number" id="quantitypack" name="quantitypack" max = 0 class="" placeholder="Enter Quantity" required>
                         <p class="error-msg"  id="error-msg"></p>
-                        <button type="submit" class="add-btn" name="add-btn">ADD</button>                        
+                        <button type="submit" class="add-btn" name="add-btn-invc">ADD</button>                        
                     </form> 
                 </div>
             </article>

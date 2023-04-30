@@ -1,6 +1,6 @@
 <?php 
 function liste_package($bdd){
-    $requete = "SELECT * FROM package";
+    $requete = "SELECT * FROM package WHERE pack_quantity > 0";
     $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
     if ($response->rowCount()>0){
         return $response;
@@ -11,7 +11,7 @@ function liste_package($bdd){
 }   
 
 function liste_package_name($bdd, $name){
-    $requete = "SELECT * FROM package WHERE pack_name = $name";
+    $requete = "SELECT * FROM package WHERE pack_name = $name and pack_quantity > 0";
     $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
     if ($response->rowCount()>0){
         return $response;
@@ -20,6 +20,9 @@ function liste_package_name($bdd, $name){
         return "No elements found";
     }
 }   
+
+
+
 
 function add_package($bdd, $name, $desc, $quantity){
     $sql="INSERT INTO package (pack_name, pack_desc, pack_quantity) 
