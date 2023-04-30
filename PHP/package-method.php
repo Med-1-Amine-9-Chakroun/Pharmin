@@ -8,7 +8,18 @@ function liste_package($bdd){
     else{
         return "No elements found";
     }
-}   
+} 
+
+function liste_package_o_o_s($bdd){
+    $requete = "SELECT * FROM package WHERE pack_quantity <= 0";
+    $response = $bdd->query($requete) or die ($bdd->errorInfo()[2]);
+    if ($response->rowCount()>0){
+        return $response;
+    }
+    else{
+        return "No elements found";
+    }
+} 
 
 function liste_package_name($bdd, $name){
     $requete = "SELECT * FROM package WHERE pack_name = $name and pack_quantity > 0";

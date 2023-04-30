@@ -147,7 +147,18 @@ if (isset($_POST["search-btn"])){
     else {
         header("location: ../HTML/medic-mang.php?errcri=Please Type SomeThing");   
     }
+}
 
-  
+if (isset($_POST['btn_sup'])){
+    
+
+
+    
+    require_once('../PHP/DbConnexion.php');
+    $bdd = maConnexion(); 
+    //quote pour proteger les caractere spéciaux
+    $id=$bdd->quote($_POST['btn_sup']);
+    $sql = "DELETE FROM medication WHERE medic_id=$id";
+    $nblignes=$bdd->exec($sql);
 }
 ?>
